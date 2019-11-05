@@ -12,7 +12,7 @@ import winsound
 from pydub import AudioSegment
 import http.client, urllib
 
-#Send Push notifications via PushOver
+#Send Push notifications via PushOver, used in the "test" function below
 def send_notification(payload):
     conn = http.client.HTTPSConnection("api.pushover.net:443")
     conn.request("POST", "/1/messages.json",
@@ -122,8 +122,8 @@ def on_connect(client, userdata, flags, rc):
 
     # Subscribing in on_connect() means that if we lose the connection and
     # reconnect then subscriptions will be renewed.
-#CHANGE THIS TO YOUR CHANNEL
-    client.subscribe("test")
+#CHANGE THIS TO YOUR TOPIC
+    client.subscribe("Light-Tower_test")
 
 #MQTT recieve commands:
 # The callback for when a PUBLISH message is received from the server.
