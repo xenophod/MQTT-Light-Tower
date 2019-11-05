@@ -13,7 +13,7 @@ def sendingit(payload):
         myclient.tls_set("mosquitto.org.crt", tls_version=ssl.PROTOCOL_TLSv1_2)
 #        myclient.tls_insecure_set(True)
         myclient.connect(mybroker_address, 8883, 60)
-        myclient.publish("test", (payload))
+        myclient.publish("Light-Tower_test", (payload))
 #        print((payload))
 
 

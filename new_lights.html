@@ -46,9 +46,9 @@
 
         console.log("Connected ");
         //document.write("connected to "+ host);
-        mqtt.subscribe("test");
+        mqtt.subscribe("Light-Tower_test");
         message = new Paho.MQTT.Message("");
-        message.destinationName = "test";
+        message.destinationName = "Light-Tower_test";
         mqtt.send(message);
       }
 
