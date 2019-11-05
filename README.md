@@ -1,5 +1,6 @@
 # MQTT-Light-Tower
 Controls for Serial Industrial Light Towers using MQTT and Python
+
 ![picture alt](https://xenophod.net/images/20191105_144926_1.gif "Animated gif")
 
 
@@ -23,6 +24,8 @@ You'll need your serial device connected to the computer running the lights_mqtt
 When you start the script, just type in:  python3 lights_mqtt.py  and it should connect to the test.mosquitto.org server. You can host your own mosquitto server and just type in it's address instead of test.mosquitto.org.
 
 With the script running, you can open the html file new_lights.html and it will also connect to the test.mosquitto.org server over websockets. When you press the buttons, you should see the output in the script window and in the html text window.
+
+
 ![picture alt](https://xenophod.net/images/2019-11-05_14-54-47.png "html control panel")
 
 
