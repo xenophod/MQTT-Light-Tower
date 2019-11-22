@@ -72,6 +72,19 @@
        message.qos = qos;
        mqtt.send(message);
        }
+       
+       function messpub() {
+       var displayResult = document.getElementById("inputText").value;
+       var count = displayResult.length;
+	         for(i=1; i < count; i++) {
+	         displayResult += ('');
+		     } 
+       var message = new Paho.MQTT.Message(displayResult);
+       message.destinationName = 'Light-Tower_test';
+       message.qos = 0;
+       mqtt.send(message);
+	   }
+
       </script>
    </head>
      <body>
@@ -110,9 +123,25 @@ commands<br>
 <br>
 <canvas id="myCanvas" width="300" height="150" style="border:0px solid #d3d3d3;">
 Your browser does not support the HTML5 canvas tag.</canvas>
-
+<br>
+    Message<BR> 
+	   <INPUT type="text" id="inputText" ><BR> 
+       <button id="myBtn" onclick="messpub();">Send message</button>
+<br>
 <br>Received Messages<br>
 <textarea id="out_messages" rows="18" cols="60">
 </textarea>
+
+<script>
+var input = document.getElementById("inputText");
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+   event.preventDefault();
+   document.getElementById("myBtn").click();
+   document.getElementById("inputText").value = "";
+  }
+});
+</script>
+
    </body>  
 </html>
